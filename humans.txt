@@ -1,0 +1,30 @@
+# humanstxt.org/
+# The humans responsible & technology colophon
+
+# TEAM
+
+    Maricopa Association of Governments
+        Name:  Vern Wolfley
+        Role: GIS Analyst/Developer
+        Contact:
+        Twitter: @vernwolfley
+        From: Litchfield Park, AZ, USA
+
+# THANKS
+
+
+
+# TECHNOLOGY COLOPHON
+
+    Standards: HTML5, CSS3
+    Components: ArcGIS Javascript API v3.8, html5-boilerplate-4.3.0, Normalize.css, jQuery v1.10.2, Modernizr, Grunt
+
+# SITE
+    Site Name: Tools Find Extent
+    Site URL: http://geo.azmag.gov/maps/..../
+    Version: 1.1.0
+    Last updated: 04/23/2014
+    Started: 03/03/2014
+    Language: English
+    Doctype: HTML5
+    IDE: Sublime Text
