@@ -13,17 +13,11 @@
 
 `Extent` `Helper` `Tools` `Maps` `ESRI` `JavaScript`
 
-## Site URL's
-* [Site] (http://geo.azmag.gov/maps/...)
+### Site URL's
+* [Site] (http://vwolfley.github.io/find-extent)
 
-* [Test Site] (http://geo.azmag.gov/maps/test/..../)
-
-## Documentation
+### Documentation
 
 A detailed list of the changes and fixes in each version update can be found in the CHANGELOG.md.
 
 * [Change Log] (CHANGELOG.md)
-
-## Process
-
-## Resources

@@ -21,7 +21,7 @@
 
 # SITE
     Site Name: Tools Find Extent
-    Site URL: http://geo.azmag.gov/maps/..../
+    Site URL: http://vwolfley.github.io/find-extent/
     Version: 1.1.0
     Last updated: 04/23/2014
     Started: 03/03/2014
