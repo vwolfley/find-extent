@@ -588,6 +588,10 @@
 	},
 	"file_history":
 	[
+		"/Users/vernwolfley/Documents/webProjects/FindExtentTool/deploy/index.html",
+		"/Users/vernwolfley/Documents/webProjects/FindExtentTool/deploy/humans.txt",
+		"/Users/vernwolfley/Documents/webProjects/FindExtentTool/deploy/package.json",
+		"/Users/vernwolfley/Documents/webProjects/FindExtentTool/deploy/README.md",
 		"/Users/vernwolfley/Documents/webProjects/TestMyMemory/deploy/index.html",
 		"/Users/vernwolfley/Documents/webProjects/TestMyMemory/deploy/js/main.js",
 		"/Users/vernwolfley/Documents/webProjects/TestMyMemory/deploy/css/main.css",
@@ -711,11 +715,7 @@
 		"/I/Projects/ArcGIS Server/10.2/javascript_apps/Demographics/deploy/build_working/app/vm/window-vm.js",
 		"/I/Projects/ArcGIS Server/10.2/javascript_apps/Demographics/deploy/build_working/app/vm/printLaunchbar-vm.js",
 		"/I/Projects/ArcGIS Server/10.2/javascript_apps/Demographics/deploy/build_working/demographic-vm.js",
-		"/C/Users/vwolfley/AppData/Roaming/Sublime Text 2/Packages/User/FileDiffs.sublime-settings",
-		"/C/Users/vwolfley/AppData/Roaming/Sublime Text 2/Packages/FileDiffs/FileDiffs.sublime-settings",
-		"/C/Users/vwolfley/AppData/Roaming/Sublime Text 2/Packages/User/Default (Windows).sublime-keymap",
-		"/I/Projects/ArcGIS Server/10.2/javascript_apps/Demographics/deploy/build_working/app/views/panel-view.html",
-		"/I/Projects/ArcGIS Server/10.2/javascript_apps/Demographics/deploy/build_working/app/helpers/printMap-delegate.js"
+		"/C/Users/vwolfley/AppData/Roaming/Sublime Text 2/Packages/User/FileDiffs.sublime-settings"
 	],
 	"find":
 	{
