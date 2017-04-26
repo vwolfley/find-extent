@@ -1,8 +1,8 @@
-/*! ========================================================================
- * FindExentTool
+/* ========================================================================
+ * Find Extent Tool
  * @file main.js
  * @summary main javascript file for project
- * @version 1.1.0
+ * @version 1.2.0
  * @author Vern Wolfley
  * ========================================================================
  * @copyright 2017 Vern Wolfley
