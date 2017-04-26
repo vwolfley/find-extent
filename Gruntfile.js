@@ -130,6 +130,47 @@ module.exports = function(grunt){
             }
         }
 
+        replace: {
+            update_Meta: {
+                src: ["index.html", "config.js", "humans.txt", "README.md", "app/resources/css/main.css"], // source files array
+                // src: ["README.md"], // source files array
+                overwrite: true, // overwrite matched source files
+                replacements: [{
+                    // html pages
+                    from: /(<meta name="revision-date" content=")[0-9]{2}\/[0-9]{2}\/[0-9]{4}(">)/g,
+                    to: '<meta name="revision-date" content="' + '<%= pkg.date %>' + '">',
+                }, {
+                    // html pages
+                    from: /(<meta name="version" content=")([0-9]+)(?:\.([0-9]+))(?:\.([0-9]+))(">)/g,
+                    to: '<meta name="version" content="' + '<%= pkg.version %>' + '">',
+                }, {
+                    // config.js
+                    from: /(v)([0-9]+)(?:\.([0-9]+))(?:\.([0-9]+))( \| )[0-9]{2}\/[0-9]{2}\/[0-9]{4}/g,
+                    to: 'v' + '<%= pkg.version %>' + ' | ' + '<%= pkg.date %>',
+                }, {
+                    // humans.txt
+                    from: /(Version\: )([0-9]+)(?:\.([0-9]+))(?:\.([0-9]+))/g,
+                    to: "Version: " + '<%= pkg.version %>',
+                }, {
+                    // humans.txt
+                    from: /(Last updated\: )[0-9]{2}\/[0-9]{2}\/[0-9]{4}/g,
+                    to: "Last updated: " + '<%= pkg.date %>',
+                }, {
+                    // README.md
+                    from: /(#### version )([0-9]+)(?:\.([0-9]+))(?:\.([0-9]+))/g,
+                    to: "#### version " + '<%= pkg.version %>',
+                }, {
+                    // README.md
+                    from: /(`Updated: )[0-9]{2}\/[0-9]{2}\/[0-9]{4}/g,
+                    to: "`Updated: " + '<%= pkg.date %>',
+                }, {
+                    // main.css
+                    from: /(main.css)( \| )(version)( \| )([0-9]+)(?:\.([0-9]+))(?:\.([0-9]+))/g,
+                    to: "main.css | version |" +' <%= pkg.version %>',
+                }]
+            }
+        }
+
 
     });
 

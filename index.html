@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=9, IE=10">
 
-    <title>Tools|Extent Finder</title>
+    <title>Tools | Extent Finder</title>
 
     <meta name="description" content="Tool for finding map extents">
     <meta name="author" content="vern wolfley">
@@ -21,17 +21,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <!-- Load CSS -->
     <!-- ArcGIS core CSS -->
-    <link rel="stylesheet" href="http://js.arcgis.com/3.9/js/esri/css/esri.css">
-    <link rel="stylesheet" href="http://js.arcgis.com/3.9/js/dojo/dijit/themes/claro/claro.css">
+    <link rel="stylesheet" href="https://js.arcgis.com/3.20/esri/css/esri.css">
+    <link rel="stylesheet" href="https://js.arcgis.com/3.20/dijit/themes/claro/claro.css">
     <!-- Custom styles for this Application -->
-    <link rel="stylesheet" href="css/normalize.css">
-    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="app/css/normalize.css">
+    <link rel="stylesheet" href="app/css/main.css">
 
-    <script src="js/vendor/modernizr-2.7.1.min.js"></script>
+    <script src="app/js/vendor/modernizr-2.7.1.min.js"></script>
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
-      <script src="js/vendor/html5shiv.min.js"></script>
-      <script src="js/vendor/respond.min.js"></script>
+      <script src="app/js/vendor/html5shiv.min.js"></script>
+      <script src="app/js/vendor/respond.min.js"></script>
     <![endif]-->
   </head>
     <body class="claro">
@@ -43,50 +43,27 @@
 
       <div id="infoDiv"></div>
 
-      <!-- <div id="proj">
-      <div id="toolsMenu" dojoType="dijit.form.DropDownButton">
-        <span>Change Projection</span>
-        <div dojoType="dijit.TooltipDialog">
-            <div class="selectionToolsOutterF">
-                <div dojoType="dijit.form.Form" id="projectionForm">
-                    <table>
-                        <tr>
-                            <td>
-                                <input dojoType="dijit.form.RadioButton" checked="true" id="webmercator" value="webmercator" name="prj" onchange="changeProjection();"/>
-                            </td>
-                            <td>
-                                <label for="webmercator">
-                                    Web Mercator
-                                </label>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <input dojoType="dijit.form.RadioButton" id="wgs84" value="wgs84" name="prj" onchange="changeProjection();"/>
-                            </td>
-                            <td>
-                                <label for="wgs84">
-                                    WGS84
-                                </label>
-                            </td>
-                        </tr>
-                    </table>
-                </div>
-            </div>
-        </div>
+      <div id="layerDiv" class="roundedCorners">
+          <input type="checkbox" class="list_item" id="layer0CheckBox" value=0 checked/>&nbsp;MAG MPO Boundary</br>
+          <input type="checkbox" class="list_item" id="layer1CheckBox" value=1 />&nbsp;County Boundaries</br>
+          <input type="checkbox" class="list_item" id="layer2CheckBox" value=2 />&nbsp;MPA Boundaries
       </div>
-    </div> -->
-
-
-
 
     <!-- Core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <script src="http://js.arcgis.com/3.9/"></script>
+    <script src="https://js.arcgis.com/3.20/"></script>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-    <script src="js/plugins.js"></script>
-    <script src="js/main.js"></script>
+    <script>
+    var dojoConfig = {
+        packages: [{
+            name: "app",
+            location: location.pathname.replace(/\/[^/]+$/, "/") + "app"
+        }]
+    }
+    </script>
+    <script src="app/js/plugins.js"></script>
+    <script src="app/js/main.js"></script>
 
     </body>
 </html>

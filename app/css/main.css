@@ -20,7 +20,8 @@ textarea {
 
 html {
     font-size: 1em;
-    line-height: 1.4;
+    line-height: 1.6;
+    font-family: Verdana, Geneva, sans-serif;
 }
 
 /*
@@ -122,10 +123,10 @@ html, body {
     font-size: 0.85em;
     top:5px;
     left: 0px;
-    width: 550px;
+    width: 270px;
     background-color: #222;
     color: #fff;
-    padding: 5px;
+    padding: 5px 0 5px 15px;
     z-index: 50;
     cursor:pointer;
 
@@ -141,8 +142,28 @@ html, body {
     z-index: 50;
 }
 
+#layerDiv {
+    position: absolute;
+    font-size: 0.85em;
+    height: 65px;
+    top: 5px;
+    padding: 5px;
+    z-index: 40;
+    background-color: #222;
+    color: #fff;
+    width: 175px;
+    right: 60px;
+    box-shadow: 0 0 5px #888;
+}
 
+.roundedCorners {
+      border-radius: 10px;
+      box-shadow: 4px 4px 8px #adadad;
+    }
 
+.esriPopup .titleButton.maximize {
+    display: none;
+}
 
 
 

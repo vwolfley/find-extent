@@ -20,7 +20,7 @@
     Components: ArcGIS Javascript API v3.8, html5-boilerplate-4.3.0, Normalize.css, jQuery v1.10.2, Modernizr, Grunt
 
 # SITE
-    Site Name: Tools Find Extent
+    Site Name: Find Extent Tools
     Site URL: http://vwolfley.github.io/find-extent/
     Version: 1.1.0
     Last updated: 04/23/2014
