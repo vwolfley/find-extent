@@ -13,11 +13,11 @@ This web app can help getting starting extents and information for your web appl
 
 ## Version ##
 
-### version | 1.2.0 ###
+* ### version | 1.2.0 ###
 
-#### Updated | 04/26/2017 ####
+* #### Updated | 04/26/2017 ####
 
-#### Created | 03/03/2014 ####
+* #### Created | 03/03/2014 ####
 
 Releases will be numbered with the following format:
 
@@ -34,7 +34,7 @@ And constructed with the following guidelines:
 `Extent` `Helper` `Tools` `Maps` `ESRI` `JavaScript`
 
 ## Site URL's
-* [Site] (http://vwolfley.github.io/find-extent)
+* [Site](http://vwolfley.github.io/find-extent)
 
 ## Documentation ##
 
@@ -50,11 +50,11 @@ Code released under the MIT license.
 
 ## Examples ##
 
-* [switch_layer_on_zoom] (https://developers.arcgis.com/javascript/3/sandbox/sandbox.html?sample=map_switch_layer_on_zoom)
-* [proportional_scale_dependent] (https://developers.arcgis.com/javascript/3/sandbox/sandbox.html?sample=renderer_proportional_scale_dependent)
-* [map_customtilelevels] (https://developers.arcgis.com/javascript/3/sandbox/sandbox.html?sample=map_customtilelevels)
-* [map_showproperties] (https://developers.arcgis.com/javascript/3/jssamples/map_showproperties.html)
+* [switch_layer_on_zoom](https://developers.arcgis.com/javascript/3/sandbox/sandbox.html?sample=map_switch_layer_on_zoom)
+* [proportional_scale_dependent](https://developers.arcgis.com/javascript/3/sandbox/sandbox.html?sample=renderer_proportional_scale_dependent)
+* [map_customtilelevels](https://developers.arcgis.com/javascript/3/sandbox/sandbox.html?sample=map_customtilelevels)
+* [map_showproperties](https://developers.arcgis.com/javascript/3/jssamples/map_showproperties.html)
 
 ## Resources
 
-* [gis.stackexchange] (https://gis.stackexchange.com/questions/108585/can-i-set-individual-scale-levels-for-an-arcgisdynamicmapservicelayer?rq=1)
+* [gis.stackexchange](https://gis.stackexchange.com/questions/108585/can-i-set-individual-scale-levels-for-an-arcgisdynamicmapservicelayer?rq=1)
