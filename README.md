@@ -34,7 +34,8 @@ And constructed with the following guidelines:
 `Extent` `Helper` `Tools` `Maps` `ESRI` `JavaScript`
 
 ## Site URL's
-* [Site](http://vwolfley.github.io/find-extent)
+* [Site on gh-pages](http://vwolfley.github.io/find-extent)
+* [Site on MAG](http://geo.azmag.gov/maps/tools/findextent/)
 
 ## Documentation ##
 
