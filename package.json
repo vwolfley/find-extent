@@ -1,40 +1,51 @@
 {
   "name": "find-extent-tool",
-  "version": "1.2.0",
-  "date": "04/26/2017",
+  "version": "1.3.0",
+  "date": "10/07/2017",
+  "copyright": "2017",
   "description": "Extent Finder Tool",
-  "keywords": ["Extent", "Helper", "Tools", "Maps", "ESRI", "JavaScript"],
+  "keywords": [
+    "Extent",
+    "Helper",
+    "Tools",
+    "Maps",
+    "ESRI",
+    "JavaScript"
+  ],
   "main": "index.js",
   "homepage": "http://vwolfley.github.io/find-extent/",
   "author": "Vern Wolfley <@vernwolfley>",
-  "contributors": [{
-    "name": "Vern Wolfley",
-    "email": "vern.wolfley@gmail.com",
-    "twitter": "@vernwolfley"
-  }],
+  "contributors": [
+    {
+      "name": "Vern Wolfley",
+      "email": "vern.wolfley@gmail.com",
+      "twitter": "@vernwolfley"
+    }
+  ],
   "repository": {
     "type": "git",
     "url": "https://github.com/vwolfley/find-extent"
   },
   "private": true,
-  "dependencies": {
-
-  },
+  "dependencies": {},
   "devDependencies": {
-    "grunt":                    "1.0.1",
-    "grunt-contrib-cssmin":     "2.1.0",
-    "grunt-contrib-csslint":    "2.0.0",
-    "grunt-contrib-jshint":     "1.1.0",
-    "grunt-contrib-uglify":     "2.3.0",
-    "grunt-contrib-watch":      "1.0.0",
-    "grunt-htmlhint":           "0.9.13",
-    "grunt-contrib-concat":     "*",
-    "grunt-text-replace":       "0.4.0",
-    "grunt-version-check":      "0.3.7",
-    "matchdep":                 "1.0.1",
-    "jshint-stylish-ex":        "0.2.0",
-    "lodash":                   "4.17.4",
-    "normalize.css":            "6.0.0"
+    "grunt": "1.0.1",
+    "grunt-contrib-cssmin": "2.2.1",
+    "grunt-contrib-csslint": "2.0.0",
+    "grunt-contrib-jshint": "1.1.0",
+    "grunt-contrib-uglify": "3.1.0",
+    "grunt-contrib-watch": "1.0.0",
+    "grunt-htmlhint": "0.9.13",
+    "grunt-contrib-concat": "1.0.1",
+    "grunt-text-replace": "0.4.0",
+    "grunt-version-check": "0.3.8",
+    "grunt-comment-toggler": "^0.2.2",
+    "grunt-contrib-clean": "1.1.0",
+    "grunt-contrib-copy": "^1.0.0",
+    "matchdep": "2.0.0",
+    "jshint-stylish-ex": "0.2.0",
+    "lodash": "4.17.4",
+    "normalize.css": ">=7.0.0"
   },
   "license": "MIT"
 }
