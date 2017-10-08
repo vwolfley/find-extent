@@ -214,7 +214,7 @@ module.exports = function(grunt) {
 
         replace: {
             update_Meta: {
-                src: ["index.html", "humans.txt", "README.md", "app/css/main.css", "app/js/main.js", "Gruntfile.js"], // source files array
+                src: ["src/index.html", "src/humans.txt", "src/README.md", "src/app/css/main.css", "src/app/js/main.js", "src/Gruntfile.js"], // source files array
                 // src: ["README.md"], // source files array
                 overwrite: true, // overwrite matched source files
                 replacements: [{
