@@ -17,6 +17,15 @@ And constructed with the following guidelines:
 
 ================================================
 
+## Version 1.3.0 | 10/07/2017
+
+* tried to update and automate development build - still needs work
+* updated `XMin` and other to lower case for easier copy & past into applications
+* added git-label files
+* added editorconfig file
+* updated gitattributes file
+* updated gitignore file
+
 ## Version 1.2.0 | 04/26/2017
 
 * added the ability to turn layers on or off with check-box
