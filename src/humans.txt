@@ -22,7 +22,7 @@
 # SITE
     Site Name: Find Extent Tools
     Site URL: http://vwolfley.github.io/find-extent/
-    Version: 1.3.0
+    Version: 1.3.1
     Last updated: 10/07/2017
     Started: 03/03/2014
     Language: English

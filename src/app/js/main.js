@@ -2,7 +2,7 @@
  * Find Extent Tool
  * @file main.js
  * @summary main javascript file for project
- * @version 1.3.0
+ * @version 1.3.1
  * @author Vern Wolfley
  * ========================================================================
  * @copyright 2017 Vern Wolfley
@@ -98,10 +98,10 @@ require([
     var currentResolution = map.getResolution();
 
     var s = "Extent:</br>" +
-      "&nbsp;&nbsp;XMin: " + map.extent.xmin.toFixed(0) + "</br>" +
-      "&nbsp;&nbsp;YMin: " + map.extent.ymin.toFixed(0) + "</br>" +
-      "&nbsp;&nbsp;XMax: " + map.extent.xmax.toFixed(0) + "</br>" +
-      "&nbsp;&nbsp;YMax: " + map.extent.ymax.toFixed(0) + "</br>" +
+      "&nbsp;&nbsp;xmin: " + map.extent.xmin.toFixed(0) + ",</br>" +
+      "&nbsp;&nbsp;ymin: " + map.extent.ymin.toFixed(0) + ",</br>" +
+      "&nbsp;&nbsp;xmax: " + map.extent.xmax.toFixed(0) + ",</br>" +
+      "&nbsp;&nbsp;ymax: " + map.extent.ymax.toFixed(0) + ",</br>" +
       "Spatial Reference: " + "wkid: " + map.spatialReference.wkid + "</br>" +
       "Center: " + "[" + centerLon.toFixed(3) + ", " + centerLat.toFixed(3) + "]" + "</br>" +
       "Map LOD Level: " + currentZoom + "</br>" +
