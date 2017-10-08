@@ -44,10 +44,6 @@ module.exports = function(grunt) {
             " * @licensed MIT\n" +
             " * ========================================================================== */\n",
 
-            banner1: "/*! ========================================================================\n" +
-                    " * @version <%= pkg.version %> | <%= pkg.date %>\n" +
-                    " * ========================================================================== */\n",
-
         htmlhint: {
             build: {
                 options: {
@@ -92,7 +88,7 @@ module.exports = function(grunt) {
         },
 
         jshint: {
-            files: ["app/js/main.js"],
+            files: ["src/app/js/main.js", "Gruntfile.js"],
             options: {
                 // strict: true,
                 sub: true,
@@ -109,33 +105,49 @@ module.exports = function(grunt) {
             }
         },
 
-        uglify: {
-            options: {
-                // add banner to top of output file
-                banner: "<%= banner1 %>",
-                preserveComments: false,
-                mangle: false,
-                // compress: true,
-            },
+        copy: {
             build: {
-                files: {
-                    "app/js/main.min.js": ["app/js/main.js"],
-                    "app/js/plugins.min.js": ["app/js/plugins.js"]
-                }
+                expand: true,
+                src: ["**"],
+                cwd: "src/",
+                dest: "dist/",
             }
         },
 
         cssmin: {
-            add_banner: {
-                options: {
-                    // add banner to top of output file
-                    banner: "<%= banner1 %>"
-                },
+            options: {
+                mergeIntoShorthands: false,
+                roundingPrecision: -1
+            },
+            target: {
                 files: {
-                    "app/css/main.min.css": ["app/css/main.css"],
-                    "app/css/normalize.min.css": ["app/css/normalize.css"],
+                    "dist/app/css/main.min.css": ["dist/app/css/main.css"],
+                    "dist/app/css/normalize.min.css": ["dist/app/css/normalize.css"]
                 }
             }
+        },
+
+        concat: {
+            css: {
+                options: {
+                    stripBanners: true,
+                    banner: "<%= cssBanner %>\n"
+                },
+                src: ["dist/app/css/normalize.min.css", "dist/app/css/main.min.css"],
+                dest: "dist/app/css/main-concat.min.css",
+                nonull: true,
+            },
+            js: {
+                options: {
+                    stripBanners: true
+                },
+                src: [
+                    "dist/app/js/plugins.js",
+                    "dist/app/js/main.js"
+                ],
+                dest: "dist/app/js/main-concat.js",
+                nonull: true,
+            },
         },
 
         clean: {
@@ -150,15 +162,6 @@ module.exports = function(grunt) {
             }
         },
 
-        copy: {
-            build: {
-                expand: true,
-                src: ["**"],
-                cwd: "src/",
-                dest: "dist/",
-            }
-        },
-
         toggleComments: {
             customOptions: {
                 options: {
@@ -170,27 +173,17 @@ module.exports = function(grunt) {
             }
         },
 
-        concat: {
-            css: {
-                options: {
-                    stripBanners: true,
-                    banner: "<%= cssBanner %>"
+        uglify: {
+            options: {
+                mangle: true,
+                compress: {
+                    drop_console: true
                 },
-                dist: {
-                    src: ["dist/app/css/normalize.min.css", "dist/app/css/main.min.css"],
-                    dest: "dist/app/css/concat.min.css",
-                    nonull: true,
-                }
+                banner: "<%= jsBanner %>\n"
             },
-            js: {
-                options: {
-                    stripBanners: true,
-                    banner: "<%= jsBanner %>"
-                },
-                dist: {
-                    src: ["app/js/plugins.min.js", "app/js/main.min.js"],
-                    dest: "app/js/main_concat.min.js",
-                    nonull: true,
+            build: {
+                files: {
+                    "dist/app/js/main-concat.min.js": ["dist/app/js/main-concat.js"],
                 }
             }
         },
@@ -227,27 +220,27 @@ module.exports = function(grunt) {
                 replacements: [{
                     // html pages
                     from: /(<meta name="revision-date" content=")[0-9]{2}\/[0-9]{2}\/[0-9]{4}(">)/g,
-                    to: '<meta name="revision-date" content="' + '<%= pkg.date %>' + '">',
+                    to: '<meta name="revision-date" content="' + "<%= pkg.date %>" + '">',
                 }, {
                     // html pages
                     from: /(<meta name="version" content=")([0-9]+)(?:\.([0-9]+))(?:\.([0-9]+))(">)/g,
-                    to: '<meta name="version" content="' + '<%= pkg.version %>' + '">',
+                    to: '<meta name="version" content="' + "<%= pkg.version %>" + '">',
                 }, {
                     // humans.txt
                     from: /(Version\: )([0-9]+)(?:\.([0-9]+))(?:\.([0-9]+))/g,
-                    to: "Version: " + '<%= pkg.version %>',
+                    to: "Version: " + "<%= pkg.version %>",
                 }, {
                     // humans.txt
                     from: /(Last updated\: )[0-9]{2}\/[0-9]{2}\/[0-9]{4}/g,
-                    to: "Last updated: " + '<%= pkg.date %>',
+                    to: "Last updated: " + "<%= pkg.date %>",
                 }, {
                     // README.md
                     from: /(### version \| )([0-9]+)(?:\.([0-9]+))(?:\.([0-9]+))/g,
-                    to: "### version | " + '<%= pkg.version %>',
+                    to: "### version | " + "<%= pkg.version %>",
                 }, {
                     // README.md
                     from: /(#### Updated \| )[0-9]{2}\/[0-9]{2}\/[0-9]{4}/g,
-                    to: "#### Updated | " + '<%= pkg.date %>',
+                    to: "#### Updated | " + "<%= pkg.date %>",
                 }, {
                     // main.css, main.js, Gruntfile.js
                     from: /(@version )([0-9]+)(?:\.([0-9]+))(?:\.([0-9]+))/g,
@@ -269,9 +262,9 @@ module.exports = function(grunt) {
 
     grunt.registerTask("update", ["replace"]);
 
-    grunt.registerTask("build", ["replace", "cssmin", "uglify", "concat"]);
+    // grunt.registerTask("build", ["replace", "cssmin", "uglify", "concat"]);
 
-    // grunt.registerTask("build", ["clean:build", "replace", "copy", "cssmin", "concat", "uglify", "clean:cleancss", "clean:cleanjs", "toggleComments"]);
+    grunt.registerTask("build", ["clean:build", "replace", "copy", "cssmin", "concat", "uglify", "clean:cleancss", "clean:cleanjs", "toggleComments"]);
 
     // the default task can be run just by typing "grunt" on the command line
     grunt.registerTask("default", []);
