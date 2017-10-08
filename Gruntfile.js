@@ -138,6 +138,38 @@ module.exports = function(grunt) {
             }
         },
 
+        clean: {
+            build: {
+                src: ["dist/"]
+            },
+            cleancss: {
+                src: ["dist/app/css/*.css", "!dist/app/css/concat.min.css"]
+            },
+            cleanjs: {
+                src: ["dist/app/js/*.js", "!dist/app/js/main-concat.min.js"]
+            }
+        },
+
+        copy: {
+            build: {
+                expand: true,
+                src: ["**"],
+                cwd: "src/",
+                dest: "dist/",
+            }
+        },
+
+        toggleComments: {
+            customOptions: {
+                options: {
+                    removeCommands: false
+                },
+                files: {
+                    "dist/index.html": "src/index.html"
+                }
+            }
+        },
+
         concat: {
             css: {
                 options: {
@@ -145,8 +177,8 @@ module.exports = function(grunt) {
                     banner: "<%= cssBanner %>"
                 },
                 dist: {
-                    src: ["app/css/normalize.min.css", "app/css/main.min.css"],
-                    dest: "app/css/concat.min.css",
+                    src: ["dist/app/css/normalize.min.css", "dist/app/css/main.min.css"],
+                    dest: "dist/app/css/concat.min.css",
                     nonull: true,
                 }
             },
@@ -238,6 +270,8 @@ module.exports = function(grunt) {
     grunt.registerTask("update", ["replace"]);
 
     grunt.registerTask("build", ["replace", "cssmin", "uglify", "concat"]);
+
+    // grunt.registerTask("build", ["clean:build", "replace", "copy", "cssmin", "concat", "uglify", "clean:cleancss", "clean:cleanjs", "toggleComments"]);
 
     // the default task can be run just by typing "grunt" on the command line
     grunt.registerTask("default", []);
