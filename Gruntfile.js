@@ -248,3 +248,7 @@ module.exports = function(grunt) {
 // http://coding.smashingmagazine.com/2013/10/29/get-up-running-grunt/
 // http://csslint.net/about.html
 // http://www.jshint.com/docs/options/
+//
+// Github Labels
+// [Website info](https://medium.com/@dave_lunny/sane-github-labels-c5d2e6004b63)
+// [NPM git-labelmaker](https://github.com/himynameisdave/git-labelmaker)
