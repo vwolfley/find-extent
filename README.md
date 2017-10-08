@@ -13,9 +13,9 @@ This web app can help getting starting extents and information for your web appl
 
 ## Version ##
 
-* ### version | 1.2.0 ###
+* ### version | 1.3.1 ###
 
-* #### Updated | 04/26/2017 ####
+* #### Updated | 10/07/2017 ####
 
 * #### Created | 03/03/2014 ####
 
