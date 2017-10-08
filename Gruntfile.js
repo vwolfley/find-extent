@@ -2,7 +2,7 @@
  * FindExentTool
  * @file Gruntfile.js
  * @summary Grunt file for task automation
- * @version 1.2.0
+ * @version 1.3.1
  * @author Vern Wolfley
  * ========================================================================
  * @copyright 2017 Vern Wolfley
@@ -214,7 +214,7 @@ module.exports = function(grunt) {
 
         replace: {
             update_Meta: {
-                src: ["src/index.html", "src/humans.txt", "src/README.md", "src/app/css/main.css", "src/app/js/main.js", "src/Gruntfile.js"], // source files array
+                src: ["src/index.html", "src/humans.txt", "README.md", "src/app/css/main.css", "src/app/js/main.js", "Gruntfile.js"], // source files array
                 // src: ["README.md"], // source files array
                 overwrite: true, // overwrite matched source files
                 replacements: [{
