@@ -11,6 +11,9 @@ import BasemapToggleWidget from "../Widgets/basemapToggleWidget";
 import DocConfig from "../../config/DocConfig";
 const ESRI_apiKEY = import.meta.env.VITE_esri_apiKey
 
+import getCountyLayer from "../MapLayers/getCountyLayer";
+
+
 let map;
 let view;
 
@@ -28,13 +31,16 @@ function MainMap() {
     // ExpandWidget(view);
   }
 
+  const CountyLayer = getCountyLayer();
+
   useEffect(() => {
     if (mapDiv.current) {
       esriConfig.apiKey = ESRI_apiKEY;
       // basemap info
       // https://developers.arcgis.com/javascript/latest/api-reference/esri-Map.html#basemap
       map = new ArcGISMap({
-        basemap: "gray-vector",
+        basemap: "streets-vector",
+        // layers: [CountyLayer],
       });
 
       view = new MapView({
@@ -61,6 +67,8 @@ function MainMap() {
       });
     }
     callWidgets();
+
+    view.ui.add("DataCardDiv", "top-right")
 
     // addLayers(map).then(async () => {
     //   // Call Widgets
