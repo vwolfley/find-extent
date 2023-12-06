@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from "react"
+import { useRef, useEffect } from "react"
 import esriConfig from "@arcgis/core/config"
 import ArcGISMap from "@arcgis/core/Map"
 import MapView from "@arcgis/core/views/MapView"
