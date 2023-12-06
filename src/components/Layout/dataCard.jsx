@@ -40,3 +40,4 @@ export default function DataCard({view}) {
 }
 // https://developers.arcgis.com/javascript/latest/sample-code/sandbox/?sample=watch-for-changes-reactiveutils
 // https://developers.arcgis.com/javascript/latest/sample-code/sandbox/?sample=featurelayerview-query
+// https://developers.arcgis.com/javascript/latest/sample-code/watch-for-changes/
