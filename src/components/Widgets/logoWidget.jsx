@@ -1,4 +1,4 @@
-import magLogo from "@images/mag-logo-black.png"
+// import magLogo from "@images/mag-logo-black.png"
 import "./widgets.css"
 
 const style = {
@@ -12,13 +12,14 @@ const style = {
 function LogoWidget(view) {
   return (
     <div style={style} id="logoDiv" className="esri-widget">
-      <img
+      <h1>TEST</h1>
+      {/* <img
         style={{
           width: "185px",
         }}
         src={magLogo}
         alt="MAG Logo"
-      />
+      /> */}
     </div>
   )
 }
