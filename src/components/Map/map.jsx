@@ -7,16 +7,15 @@ import ZoomWidget from "../Widgets/zoomWidget"
 import HomeWidget from "../Widgets/homeWidget"
 import LocateWidget from "../Widgets/locateWidget"
 import BasemapToggleWidget from "../Widgets/basemapToggleWidget"
-// import LogoWidget from "../Widgets/logoWidget"
 
 import DataCard from "../Layout/dataCard"
-
-import GeoJSONLayer from "@arcgis/core/layers/GeoJSONLayer"
 
 import DocConfig from "../../config/DocConfig"
 const ESRI_apiKEY = import.meta.env.VITE_esri_apiKey
 
-import getCountyLayer from "../MapLayers/getCountyLayer"
+import getMAGAreaLayer from "../MapLayers/getMAGAreaLayer"
+
+
 
 let map
 let view
@@ -31,29 +30,27 @@ function MainMap() {
     HomeWidget(view)
     LocateWidget(view)
     BasemapToggleWidget(view)
-    // LogoWidget(view)
-    // // SearchWidget(view);
-    // legendLayerList(view);
-    // ExpandWidget(view);
     DataCard(view)
   }
-  const getCountyLayer = getCountyLayer()
 
   useEffect(() => {
     if (mapDiv.current) {
       esriConfig.apiKey = ESRI_apiKEY
       // basemap info
       // https://developers.arcgis.com/javascript/latest/api-reference/esri-Map.html#basemap
+
+      const MAGAreaLayer = getMAGAreaLayer()  
+
       map = new ArcGISMap({
         basemap: "streets-vector",
-        layers: [getCountyLayer],
+        layers: [MAGAreaLayer],
       })
 
       view = new MapView({
         map,
         container: mapDiv.current,
         center: [-112.354, 33.308],
-        zoom: 9,
+        zoom: 8,
         constraints: {
           rotationEnabled: false,
           minZoom: 6,
