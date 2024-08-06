@@ -8,29 +8,25 @@ import HomeWidget from "../Widgets/homeWidget"
 import LocateWidget from "../Widgets/locateWidget"
 import BasemapToggleWidget from "../Widgets/basemapToggleWidget"
 
-import DataCard from "../Layout/dataCard"
-
 import DocConfig from "../../config/DocConfig"
 const ESRI_apiKEY = import.meta.env.VITE_esri_apiKey
 
 import getMAGAreaLayer from "../MapLayers/getMAGAreaLayer"
 
-
+import { useDataStore } from "../../stores/DataContext"
 
 let map
 let view
 
 function MainMap() {
+  const store = useDataStore()
   const mapDiv = useRef(null)
-
-  // DataCard(view)
 
   function callWidgets() {
     ZoomWidget(view)
     HomeWidget(view)
     LocateWidget(view)
     BasemapToggleWidget(view)
-    DataCard(view)
   }
 
   useEffect(() => {
@@ -39,15 +35,15 @@ function MainMap() {
       // basemap info
       // https://developers.arcgis.com/javascript/latest/api-reference/esri-Map.html#basemap
 
-      const MAGAreaLayer = getMAGAreaLayer()  
+      // const MAGAreaLayer = getMAGAreaLayer()
 
       map = new ArcGISMap({
         basemap: "streets-vector",
-        layers: [MAGAreaLayer],
+        layers: [],
       })
 
       view = new MapView({
-        map,
+        map: map,
         container: mapDiv.current,
         center: [-112.354, 33.308],
         zoom: 8,
@@ -70,13 +66,11 @@ function MainMap() {
       })
     }
     callWidgets()
-
-    // view.ui.add("DataCardDiv", "top-right")
-
-    // addLayers(map).then(async () => {
-    //   // Call Widgets
-    //     callWidgets();
-    // });
+    view.when(async () => {
+      store.setView(view)
+      store.setMap(map)
+      
+    })
   }, [])
 
   return <div id="map" className="h-full w-full m-auto" ref={mapDiv}></div>

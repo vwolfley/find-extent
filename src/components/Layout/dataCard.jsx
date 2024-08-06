@@ -1,28 +1,38 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect } from "react"
 import * as reactiveUtils from "@arcgis/core/core/reactiveUtils.js"
 
-export default function DataCard({view}) {
-  // const [min, setXmin] = useState(null)
+export default function DataCard(view) {
+  let infoCenter
+  let infoExtent
+  console.log(view)
 
-  // useEffect(() => {
-  //   const watchHandle = reactiveUtils.watch(
-  //     () => [view.extent, view.scale],
-  //     ([extent, scale]) => {
-  //       console.log(extent[0].xmin);
-  //       setXmin(extent[0].xmin);
-  //     }
-  //   );
+  // Watch view's stationary property for becoming true.
+  reactiveUtils.when(
+    () => view.stationary === true,
+    () => {
+      // Get the new center of the view only when view is stationary.
+      if (view.center) {
+        infoCenter = `<br> <span> the view center changed. </span>
+              x: ${view.center.x.toFixed(2)}
+              y: ${view.center.y.toFixed(2)}`
+        // displayMessage(info)
+      }
+      // Get the new extent of the view only when view is stationary.
+      if (view.extent) {
+        infoExtent = `<br> <span> the view extent changed: </span>
+              <br> xmin: ${view.extent.xmin.toFixed(2)}
+              xmax: ${view.extent.xmax.toFixed(2)}
+              <br> ymin: ${view.extent.ymin.toFixed(2)}
+              ymax: ${view.extent.ymax.toFixed(2)}`
+        // displayMessage(info)
+      }
+    },
+  )
 
-  //   // Cleanup function
-  //   return () => {
-  //     watchHandle.remove();
-  //   };
-
-
-    
-  // }, [view]);
-
-  // const xminChange = min;
+  // function displayMessage(info) {
+  //   outputMessages.innerHTML += info;
+  //   outputMessages.scrollTop = outputMessages.scrollHeight;
+  // }
 
   return (
     <div
@@ -32,8 +42,10 @@ export default function DataCard({view}) {
         Extent Finder Tool
       </h5>
       <section className="mb-3 font-normal text-gray-700 dark:text-gray-400">
+        <h6>Center</h6>
+        <div>{infoCenter}</div>
         <h6>Extent</h6>
-        {/* <div>xmin: {xminChange}</div> */}
+        <div>{infoExtent}</div>
       </section>
     </div>
   )
