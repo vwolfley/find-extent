@@ -35,11 +35,11 @@ function MainMap() {
       // basemap info
       // https://developers.arcgis.com/javascript/latest/api-reference/esri-Map.html#basemap
 
-      // const MAGAreaLayer = getMAGAreaLayer()
+      const MAGAreaLayer = getMAGAreaLayer()
 
-      map = new ArcGISMap({
+      const map = new ArcGISMap({
         basemap: "streets-vector",
-        layers: [],
+        layers: [MAGAreaLayer],
       })
 
       view = new MapView({
@@ -66,11 +66,11 @@ function MainMap() {
       })
     }
     callWidgets()
-    view.when(async () => {
-      store.setView(view)
-      store.setMap(map)
+    // view.when(async () => {
+    //   // store.setView(view)
+    //   // store.setMap(map)
       
-    })
+    // })
   }, [])
 
   return <div id="map" className="h-full w-full m-auto" ref={mapDiv}></div>
